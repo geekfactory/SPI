@@ -1,0 +1,645 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+"3309 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic16f887.h
+[s S26 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+[u S35 . 1 `S26 1 . 1 0 ]
+"1513
+[e E1715 enSPIModules `uc
+E_SPI_1 1
+E_SPI_2 2
+E_SPI_3 3
+E_SPI_4 4
+]
+"63 ../SPI.h
+[e E1752 enUARTModules `uc
+E_UART_NULL 0
+E_UART_1 1
+E_UART_2 2
+E_UATR_3 3
+E_UART_4 4
+E_UART_5 5
+]
+"76
+[e E1698 _BOOL `uc
+FALSE 0
+TRUE 1
+]
+"99 main.c
+[e E1634 _BOOL `uc
+FALSE 0
+TRUE 1
+]
+[e E1651 enSPIModules `uc
+E_SPI_1 1
+E_SPI_2 2
+E_SPI_3 3
+E_SPI_4 4
+]
+"76 C:/Users/Ruben/Dropbox/Electronics/MCULib/SPI/SPI.h
+[s S148 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+[s S154 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S159 . 1 `S148 1 . 1 0 `S154 1 . 1 0 ]
+"843 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic16f887.h
+[s S174 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S183 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S188 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DATA 1 0 :1:5 
+]
+[s S194 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S199 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S204 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S209 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[u S214 . 1 `S174 1 . 1 0 `S183 1 . 1 0 `S188 1 . 1 0 `S194 1 . 1 0 `S199 1 . 1 0 `S204 1 . 1 0 `S209 1 . 1 0 ]
+"164 C:/Users/Ruben/Dropbox/Electronics/MCULib/SPI/SPI-PIC16.c
+[e E1651 enUARTModules `uc
+E_UART_NULL 0
+E_UART_1 1
+E_UART_2 2
+E_UATR_3 3
+E_UART_4 4
+E_UART_5 5
+]
+"2581 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic16f887.h
+[s S330 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+[s S339 . 1 `uc 1 TXD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 nTX8 1 0 :1:6 
+]
+[s S343 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[u S346 . 1 `S330 1 . 1 0 `S339 1 . 1 0 `S343 1 . 1 0 ]
+"2522
+[e E1634 _BOOL `uc
+FALSE 0
+TRUE 1
+]
+[s S370 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+[s S379 . 1 `uc 1 RCD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S383 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 nRC8 1 0 :1:6 
+]
+[s S386 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[u S389 . 1 `S370 1 . 1 0 `S379 1 . 1 0 `S383 1 . 1 0 `S386 1 . 1 0 ]
+"1100
+[s S415 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+[u S423 . 1 `S415 1 . 1 0 ]
+"533 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\doprnt.c
+[s S513 . 4 `*DCCuc 1 _cp 2 0 `ui 1 _len 2 2 ]
+[u S516 . 4 `ui 1 _val 2 0 `S513 1 _str 4 0 ]
+"23 C:/Users/Ruben/Dropbox/Electronics/MCULib/SPI/SPI-PIC16.c
+[v _spi_init `(uc  1 e 1 0 ]
+"38
+[v _spi_control `(uc  1 e 1 0 ]
+"93
+[v _spi_open `(E1698  1 e 1 0 ]
+"100
+[v _spi_close `(E1698  1 e 1 0 ]
+"107
+[v _spi_write `(v  1 e 0 0 ]
+"115
+[v _spi_read `(uc  1 e 1 0 ]
+"122
+[v _spi_write_array `(v  1 e 0 0 ]
+"133
+[v _spi_read_array `(v  1 e 0 0 ]
+"143
+[v _spi_trans `(uc  1 e 1 0 ]
+"152
+[v _spi_trans_array `(v  1 e 0 0 ]
+"162
+[v _spi_available `(E1634  1 s 1 spi_available ]
+"10 C:/Users/Ruben/Dropbox/Electronics/MCULib/UART/UART-PIC16.c
+[v _uart_init `(uc  1 e 1 0 ]
+"28
+[v _uart_control `(uc  1 e 1 0 ]
+"52
+[v _uart_open `(E1698  1 e 1 0 ]
+"65
+[v _uart_close `(E1634  1 e 1 0 ]
+"76
+[v _uart_write `(v  1 e 0 0 ]
+"84
+[v _uard_write_word `(v  1 e 0 0 ]
+"99
+[v _uart_read `(uc  1 e 1 0 ]
+"107
+[v _uart_read_word `(us  1 e 2 0 ]
+"122
+[v _uart_write_array `(v  1 e 0 0 ]
+"131
+[v _uart_read_array `(v  1 e 0 0 ]
+"140
+[v _uart_puts `(v  1 e 0 0 ]
+"150
+[v _uart_gets `(v  1 e 0 0 ]
+"161
+[v _uart_available `(E1634  1 e 1 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\abdiv.c
+[v ___abdiv `(c  1 e 1 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\abmod.c
+[v ___abmod `(c  1 e 1 0 ]
+"34 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\abtoft.c
+[v ___abtoft `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\aldiv.c
+[v ___aldiv `(l  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\almod.c
+[v ___almod `(l  1 e 4 0 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\altoft.c
+[v ___altoft `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\atdiv.c
+[v ___atdiv `(m  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\atmod.c
+[v ___atmod `(m  1 e 3 0 ]
+"38 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\attoft.c
+[v ___attoft `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\awdiv.c
+[v ___awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\awmod.c
+[v ___awmod `(i  1 e 2 0 ]
+"33 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\awtoft.c
+[v ___awtoft `(f  1 e 3 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\bmul.c
+[v ___bmul `(uc  1 e 1 0 ]
+"465 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\doprnt.c
+[v _printf `(i  1 e 2 0 ]
+"63 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\float.c
+[v ___ftpack `(f  1 e 3 0 ]
+"87 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\ftadd.c
+[v ___ftadd `(f  1 e 3 0 ]
+"50 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\ftdiv.c
+[v ___ftdiv `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\ftge.c
+[v ___ftge `(b  1 e 0 0 ]
+"52 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\ftmul.c
+[v ___ftmul `(f  1 e 3 0 ]
+"16 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\ftneg.c
+[v ___ftneg `(f  1 e 3 0 ]
+"17 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\ftsub.c
+[v ___ftsub `(f  1 e 3 0 ]
+"45 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\fttol.c
+[v ___fttol `(l  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\lbdiv.c
+[v ___lbdiv `(uc  1 e 1 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\lbmod.c
+[v ___lbmod `(uc  1 e 1 0 ]
+"28 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\lbtoft.c
+[v ___lbtoft `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\lldiv.c
+[v ___lldiv `(ul  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\llmod.c
+[v ___llmod `(ul  1 e 4 0 ]
+"36 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\lltoft.c
+[v ___lltoft `(f  1 e 3 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\lmul.c
+[v ___lmul `(ul  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\ltdiv.c
+[v ___ltdiv `(um  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\ltmod.c
+[v ___ltmod `(um  1 e 3 0 ]
+"31 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\lttoft.c
+[v ___lttoft `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\lwdiv.c
+[v ___lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\lwmod.c
+[v ___lwmod `(ui  1 e 2 0 ]
+"29 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\lwtoft.c
+[v ___lwtoft `(f  1 e 3 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\tmul.c
+[v ___tmul `(um  1 e 3 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\wmul.c
+[v ___wmul `(ui  1 e 2 0 ]
+"7 eeprom.c
+[v _eecpymem `(v  1 e 0 0 ]
+"25
+[v _memcpyee `(v  1 e 0 0 ]
+"49
+[v ___eetoc `(uc  1 e 1 0 ]
+"57
+[v ___eetoi `(ui  1 e 2 0 ]
+"65
+[v ___eetom `(um  1 e 3 0 ]
+"73
+[v ___eetol `(ul  1 e 4 0 ]
+"81
+[v ___ctoee `(uc  1 e 1 0 ]
+"88
+[v ___itoee `(ui  1 e 2 0 ]
+"95
+[v ___mtoee `(um  1 e 3 0 ]
+"102
+[v ___ltoee `(ul  1 e 4 0 ]
+"109
+[v ___eetoft `(f  1 e 3 0 ]
+"117
+[v ___eetofl `(d  1 e 3 0 ]
+"125
+[v ___fttoee `(f  1 e 3 0 ]
+"132
+[v ___fltoee `(d  1 e 3 0 ]
+"57 main.c
+[v _putch `(v  1 e 0 0 ]
+"62
+[v _main `(v  1 e 0 0 ]
+"3173 /Volumes/build/bamboo/xml-data/build-dir/XC8-RELEASE-JOB1/nz/build/dist/osx/include/pic16f887.h
+[v _EEDATA `VEuc  1 e 1 @268 ]
+"3184
+[v _EEADR `VEuc  1 e 1 @269 ]
+"3419
+[v _EECON1 `VEuc  1 e 1 @396 ]
+"3463
+[v _EECON2 `VEuc  1 e 1 @397 ]
+"3615
+[v _CARRY `VEb  1 e 0 @24 ]
+"3701
+[v _GIE `VEb  1 e 0 @95 ]
+"3889
+[v _RD `VEb  1 e 0 @3168 ]
+"4189
+[v _WR `VEb  1 e 0 @3169 ]
+"4191
+[v _WREN `VEb  1 e 0 @3170 ]
+"18 C:/Users/Ruben/Dropbox/Electronics/MCULib/SPI/SPI-PIC16.c
+[v _inuse `E1634  1 s 1 inuse ]
+[s S415 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"535 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic16f887.h
+[u S423 . 1 `S415 1 . 1 0 ]
+[v _PIR1bits `VES423  1 e 1 @12 ]
+"817
+[v _SSPBUF `VEuc  1 e 1 @19 ]
+"823
+[v _SSPCON `VEuc  1 e 1 @20 ]
+[s S148 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"843
+[s S154 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S159 . 1 `S148 1 . 1 0 `S154 1 . 1 0 ]
+[v _SSPCONbits `VES159  1 e 1 @20 ]
+"1006
+[v _RCSTA `VEuc  1 e 1 @24 ]
+[s S370 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"1036
+[s S379 . 1 `uc 1 RCD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S383 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 nRC8 1 0 :1:6 
+]
+[s S386 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[u S389 . 1 `S370 1 . 1 0 `S379 1 . 1 0 `S383 1 . 1 0 `S386 1 . 1 0 ]
+[v _RCSTAbits `VES389  1 e 1 @24 ]
+"1100
+[v _TXREG `VEuc  1 e 1 @25 ]
+"1106
+[v _RCREG `VEuc  1 e 1 @26 ]
+[s S26 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1513
+[u S35 . 1 `S26 1 . 1 0 ]
+[v _TRISCbits `VES35  1 e 1 @135 ]
+"2121
+[v _SSPSTAT `VEuc  1 e 1 @148 ]
+[s S174 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"2175
+[s S183 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S188 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DATA 1 0 :1:5 
+]
+[s S194 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S199 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S204 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S209 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[u S214 . 1 `S174 1 . 1 0 `S183 1 . 1 0 `S188 1 . 1 0 `S194 1 . 1 0 `S199 1 . 1 0 `S204 1 . 1 0 `S209 1 . 1 0 ]
+[v _SSPSTATbits `VES214  1 e 1 @148 ]
+"2496
+[v _TXSTA `VEuc  1 e 1 @152 ]
+[s S330 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"2522
+[s S339 . 1 `uc 1 TXD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 nTX8 1 0 :1:6 
+]
+[s S343 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[u S346 . 1 `S330 1 . 1 0 `S339 1 . 1 0 `S343 1 . 1 0 ]
+[v _TXSTAbits `VES346  1 e 1 @152 ]
+"2581
+[v _SPBRG `VEuc  1 e 1 @153 ]
+"3309
+[v _ANSEL `VEuc  1 e 1 @392 ]
+"354 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\doprnt.c
+[v _dpowers `DCC[5]ui  1 s 10 dpowers ]
+"52 main.c
+[v _uart1 `uc  1 e 1 0 ]
+"53
+[v _spi1 `uc  1 e 1 0 ]
+"62
+[v _main `(v  1 e 0 0 ]
+{
+"69
+[v main@i `uc  1 a 1 17 ]
+[v main@rx `uc  1 a 1 16 ]
+"99
+} 0
+"23 C:/Users/Ruben/Dropbox/Electronics/MCULib/SPI/SPI-PIC16.c
+[v _spi_init `(uc  1 e 1 0 ]
+{
+[v spi_init@eModule `E1651  1 a 1 wreg ]
+[v spi_init@eModule `E1651  1 a 1 wreg ]
+"35
+} 0
+"10 C:/Users/Ruben/Dropbox/Electronics/MCULib/UART/UART-PIC16.c
+[v _uart_init `(uc  1 e 1 0 ]
+{
+[v uart_init@eUART `E1651  1 a 1 wreg ]
+[v uart_init@eUART `E1651  1 a 1 wreg ]
+"25
+} 0
+"28
+[v _uart_control `(uc  1 e 1 0 ]
+{
+[v uart_control@uartd `uc  1 a 1 wreg ]
+[v uart_control@uartd `uc  1 a 1 wreg ]
+[v uart_control@ctrl `ul  1 p 4 0 ]
+[v uart_control@arg `ul  1 p 4 4 ]
+"49
+} 0
+"38 C:/Users/Ruben/Dropbox/Electronics/MCULib/SPI/SPI-PIC16.c
+[v _spi_control `(uc  1 e 1 0 ]
+{
+[v spi_control@spid `uc  1 a 1 wreg ]
+"43
+[v spi_control@speed `uc  1 a 1 13 ]
+"38
+[v spi_control@spid `uc  1 a 1 wreg ]
+[v spi_control@ctrl `ul  1 p 4 0 ]
+[v spi_control@arg `ul  1 p 4 4 ]
+"90
+} 0
+"52 C:/Users/Ruben/Dropbox/Electronics/MCULib/UART/UART-PIC16.c
+[v _uart_open `(E1698  1 e 1 0 ]
+{
+[v uart_open@uartd `uc  1 a 1 wreg ]
+[v uart_open@uartd `uc  1 a 1 wreg ]
+"62
+} 0
+"140
+[v _uart_puts `(v  1 e 0 0 ]
+{
+[v uart_puts@uartd `uc  1 a 1 wreg ]
+[v uart_puts@uartd `uc  1 a 1 wreg ]
+[v uart_puts@string `*.cDCCuc  1 p 1 0 ]
+"147
+} 0
+"93 C:/Users/Ruben/Dropbox/Electronics/MCULib/SPI/SPI-PIC16.c
+[v _spi_open `(E1698  1 e 1 0 ]
+{
+[v spi_open@spid `uc  1 a 1 wreg ]
+[v spi_open@spid `uc  1 a 1 wreg ]
+"97
+} 0
+"465 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\doprnt.c
+[v _printf `(i  1 e 2 0 ]
+{
+[v printf@f `*.cDCCuc  1 a 1 wreg ]
+[s S513 . 4 `*DCCuc 1 _cp 2 0 `ui 1 _len 2 2 ]
+"533
+[u S516 . 4 `ui 1 _val 2 0 `S513 1 _str 4 0 ]
+[v printf@_val `S516  1 a 4 9 ]
+"499
+[v printf@c `c  1 a 1 13 ]
+"506
+[v printf@prec `c  1 a 1 8 ]
+"508
+[v printf@flag `uc  1 a 1 6 ]
+"466
+[v printf@ap `[1]*v  1 a 1 5 ]
+"465
+[v printf@f `*.cDCCuc  1 a 1 wreg ]
+"1548
+} 0
+"57 main.c
+[v _putch `(v  1 e 0 0 ]
+{
+[v putch@data `uc  1 a 1 wreg ]
+[v putch@data `uc  1 a 1 wreg ]
+"59
+} 0
+"76 C:/Users/Ruben/Dropbox/Electronics/MCULib/UART/UART-PIC16.c
+[v _uart_write `(v  1 e 0 0 ]
+{
+[v uart_write@uartd `uc  1 a 1 wreg ]
+[v uart_write@uartd `uc  1 a 1 wreg ]
+[v uart_write@data `uc  1 p 1 0 ]
+"81
+} 0
+"143 C:/Users/Ruben/Dropbox/Electronics/MCULib/SPI/SPI-PIC16.c
+[v _spi_trans `(uc  1 e 1 0 ]
+{
+[v spi_trans@spid `uc  1 a 1 wreg ]
+"144
+[v spi_trans@rxtmp `uc  1 a 1 3 ]
+"143
+[v spi_trans@spid `uc  1 a 1 wreg ]
+[v spi_trans@data `uc  1 p 1 0 ]
+"149
+} 0
+"100
+[v _spi_close `(E1698  1 e 1 0 ]
+{
+[v spi_close@spid `uc  1 a 1 wreg ]
+[v spi_close@spid `uc  1 a 1 wreg ]
+"104
+} 0
+"162
+[v _spi_available `(E1634  1 s 1 spi_available ]
+{
+[v spi_available@spid `uc  1 a 1 wreg ]
+[v spi_available@spid `uc  1 a 1 wreg ]
+"164
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\lwdiv.c
+[v ___lwdiv `(ui  1 e 2 0 ]
+{
+"6
+[v ___lwdiv@quotient `ui  1 a 2 5 ]
+"7
+[v ___lwdiv@counter `uc  1 a 1 7 ]
+"5
+[v ___lwdiv@divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend `ui  1 p 2 2 ]
+"26
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\lwmod.c
+[v ___lwmod `(ui  1 e 2 0 ]
+{
+"6
+[v ___lwmod@counter `uc  1 a 1 13 ]
+"5
+[v ___lwmod@divisor `ui  1 p 2 8 ]
+[v ___lwmod@dividend `ui  1 p 2 10 ]
+"21
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\lldiv.c
+[v ___lldiv `(ul  1 e 4 0 ]
+{
+"6
+[v ___lldiv@quotient `ul  1 a 4 9 ]
+"7
+[v ___lldiv@counter `uc  1 a 1 13 ]
+"5
+[v ___lldiv@divisor `ul  1 p 4 0 ]
+[v ___lldiv@dividend `ul  1 p 4 4 ]
+"26
+} 0

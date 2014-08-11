@@ -1,0 +1,22 @@
+_uart_write: CODE, 909 0 20
+_uart_control: CODE, 1238 0 77
+__stringtab: STRING, 3 0 6
+__stringdata: STRING, 19 0 74
+_putch: CODE, 895 0 14
+_dpowers: STRING, 9 0 10
+_main: CODE, 1603 0 206
+_spi_trans: CODE, 976 0 28
+_spi_control: CODE, 1424 0 179
+_uart_init: CODE, 929 0 22
+__initialization: CODE, 875 0 1
+_spi_open: CODE, 887 0 8
+___lwdiv: CODE, 1161 0 77
+_spi_init: CODE, 1049 0 45
+_spi_available: CODE, 880 0 7
+___lldiv: CODE, 1315 0 109
+_uart_puts: CODE, 1004 0 45
+_printf: CODE, 1809 0 239
+___lwmod: CODE, 1094 0 67
+_uart_open: CODE, 951 0 25
+_spi_close: CODE, 870 0 5
+Total: 1264
