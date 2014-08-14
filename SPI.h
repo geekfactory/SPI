@@ -1,20 +1,35 @@
+/*	SPI Interface Driver
+	Copyright (C) 2014 Jesus Ruben Santa Anna Zamudio.
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Author website: http://www.geekfactory.mx
+	Author e-mail: ruben at geekfactory dot mx
+ */
 #ifndef SPI_H
 #define SPI_H
 /*-------------------------------------------------------------*/
-/*				Includes and dependencies						*/
+/*		Includes and dependencies			*/
 /*-------------------------------------------------------------*/
 #include "SPIPort.h"
+
 /*-------------------------------------------------------------*/
-/*				Macros and definitions							*/
+/*		Macros and definitions				*/
 /*-------------------------------------------------------------*/
-/** 
- * Configures the SPI module for Master operation
- */
-#define SPI_MASTER	0x00000001
-/**
- * Configures the SPI module for slave operation
- */
-#define SPI_SLAVE	0x00000002
+
+#define SPI_MASTER	0x00000001	//!< Configures the SPI module as Master
+#define SPI_SLAVE	0x00000002	//!< Configures the SPI module as Slave
 
 #define SPI_CPOL0_CPHA0 0x00000010
 #define SPI_CPOL0_CPHA1	0x00000020
@@ -34,7 +49,7 @@
 #define SPI_DIV_1_32	6
 #define SPI_DIV_1_64	7
 /*-------------------------------------------------------------*/
-/*				Typedefs enums & structs						*/
+/*		Typedefs enums & structs			*/
 /*-------------------------------------------------------------*/
 
 /**
@@ -46,8 +61,16 @@ enum enSPIModules {
 	E_SPI_3 = 3,
 	E_SPI_4 = 4,
 };
+
+// Define "boolean" values
+#ifndef TRUE
+#define TRUE 1
+#endif
+#ifndef FALSE
+#define FALSE 0
+#endif
 /*-------------------------------------------------------------*/
-/*				Function prototypes								*/
+/*		Function prototypes				*/
 /*-------------------------------------------------------------*/
 
 /**
@@ -73,7 +96,7 @@ xSPIHandle spi_init(enum enSPIModules eModule);
  *
  * @return Returns 0 if success, negative value if fails
  */
-PORTBASE spi_control(xSPIHandle spid, DWORD ctrl, DWORD arg);
+uint8_t spi_control(xSPIHandle spid, uint32_t ctrl, uint32_t arg);
 
 /**
  * @brief Enables SPI module operation
@@ -85,7 +108,7 @@ PORTBASE spi_control(xSPIHandle spid, DWORD ctrl, DWORD arg);
  *
  * @return Non-zero value if the SPI module was opened
  */
-BOOL spi_open(xSPIHandle spid);
+uint8_t spi_open(xSPIHandle spid);
 
 /**
  * @brief Disables SPI module operation
@@ -97,7 +120,7 @@ BOOL spi_open(xSPIHandle spid);
  *
  * @return Non-zero value if the SPI module was closed
  */
-BOOL spi_close(xSPIHandle spid);
+uint8_t spi_close(xSPIHandle spid);
 
 /**
  * @brief Writes a single byte to the SPI
@@ -106,7 +129,7 @@ BOOL spi_close(xSPIHandle spid);
  *
  * @param data The data byte to be transfered
  */
-void spi_write(xSPIHandle spid, BYTE data);
+void spi_write(xSPIHandle spid, uint8_t data);
 
 /**
  * @brief Reads a single byte from the SPI
@@ -115,7 +138,7 @@ void spi_write(xSPIHandle spid, BYTE data);
  *
  * @return The received data byte
  */
-BYTE spi_read(xSPIHandle spid);
+uint8_t spi_read(xSPIHandle spid);
 
 /**
  * @brief Writes an array of bytes to the SPI
@@ -124,7 +147,7 @@ BYTE spi_read(xSPIHandle spid);
  * @param txbuf Pointer to buffer containing the data to transmit
  * @param len The lenght of the data to transfer
  */
-void spi_write_array(xSPIHandle spid, const BYTE * txbuf, unsigned short len);
+void spi_write_array(xSPIHandle spid, const uint8_t * txbuf, uint16_t len);
 
 /**
  * @brief Reads an array of bytes from the SPI
@@ -133,7 +156,7 @@ void spi_write_array(xSPIHandle spid, const BYTE * txbuf, unsigned short len);
  * @param rxbuf Pointer to buffer to hold the received data
  * @param len The length of the data to be received
  */
-void spi_read_array(xSPIHandle spid, BYTE * rxbuf, unsigned short len);
+void spi_read_array(xSPIHandle spid, uint8_t * rxbuf, uint16_t len);
 
 /**
  * @brief Transfers a byte to and from the SPI
@@ -143,7 +166,7 @@ void spi_read_array(xSPIHandle spid, BYTE * rxbuf, unsigned short len);
  *
  * @return The received data byte
  */
-BYTE spi_trans(xSPIHandle spid, BYTE data);
+uint8_t spi_trans(xSPIHandle spid, uint8_t data);
 
 /**
  * @brief Transfers an array of bytes to and from the SPI
@@ -153,7 +176,7 @@ BYTE spi_trans(xSPIHandle spid, BYTE data);
  * @param rxbuf Pointer to buffer to hold the received data
  * @param len The length of the Read and Write buffers
  */
-void spi_trans_array(xSPIHandle spid, BYTE * txbuf, BYTE * rxbuf, unsigned short len);
+void spi_trans_array(xSPIHandle spid, uint8_t * txbuf, uint8_t * rxbuf, uint16_t len);
 
 #endif
 // End of Header file

@@ -1,23 +1,27 @@
-/**
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+/*	SPI Interface Driver
+	Copyright (C) 2014 Jesus Ruben Santa Anna Zamudio.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Author website: http://www.geekfactory.mx
+	Author e-mail: ruben at geekfactory dot mx
  */
-
 #include "SPI.h"
 
-static BOOL inuse = FALSE;
+static uint8_t inuse = FALSE;
 
-static BOOL spi_available( xSPIHandle spid );
+static uint8_t spi_available( xSPIHandle spid );
 
 xSPIHandle spi_init( enum enSPIModules eModule )
 {
@@ -25,7 +29,7 @@ xSPIHandle spi_init( enum enSPIModules eModule )
 		return 0;
 
 	SSPSTAT = 0x00;
-	SSPCON = 0x00;
+	SSPCON1 = 0x00;
 
 	// Apply default SPI configuration
 	spi_control( eModule, SPI_MASTER | SPI_MODE_0, SPI_DIV_1_4 );
@@ -34,7 +38,7 @@ xSPIHandle spi_init( enum enSPIModules eModule )
 	return eModule;
 }
 
-PORTBASE spi_control( xSPIHandle spid, DWORD ctrl, DWORD arg )
+uint8_t spi_control( xSPIHandle spid, uint32_t ctrl, uint32_t arg )
 {
 	// Check handle
 	if( spid != 1 )
@@ -47,18 +51,18 @@ PORTBASE spi_control( xSPIHandle spid, DWORD ctrl, DWORD arg )
 		// If SPI is master, use arg as prescaler config or baurdate information
 	case SPI_MASTER:
 		if( speed == SPI_DIV_1_4 )
-			SSPCONbits.SSPM = 0;
+			SSPCON1bits.SSPM = 0;
 		else if( speed == SPI_DIV_1_16 )
-			SSPCONbits.SSPM = 1;
+			SSPCON1bits.SSPM = 1;
 		else if( speed == SPI_DIV_1_64 )
-			SSPCONbits.SSPM = 2;
+			SSPCON1bits.SSPM = 2;
 		else
 			// Default to low speed
-			SSPCONbits.SSPM = 2;
+			SSPCON1bits.SSPM = 2;
 		break;
 	case SPI_SLAVE:
 		// Configure SPI module as slave
-		SSPCONbits.SSPM = 4;
+		SSPCON1bits.SSPM = 4;
 		break;
 		// Any other operating mode is invalid
 	default:
@@ -68,19 +72,19 @@ PORTBASE spi_control( xSPIHandle spid, DWORD ctrl, DWORD arg )
 	// Process the SPI clock phase and polarity fields
 	switch( ctrl & 0x000000F0 ) {
 	case SPI_CPOL0_CPHA0:
-		SSPCONbits.CKP = 0;
+		SSPCON1bits.CKP = 0;
 		SSPSTATbits.CKE = 0;
 		break;
 	case SPI_CPOL0_CPHA1:
-		SSPCONbits.CKP = 0;
+		SSPCON1bits.CKP = 0;
 		SSPSTATbits.CKE = 1;
 		break;
 	case SPI_CPOL1_CPHA0:
-		SSPCONbits.CKP = 1;
+		SSPCON1bits.CKP = 1;
 		SSPSTATbits.CKE = 0;
 		break;
 	case SPI_CPOL1_CPHA1:
-		SSPCONbits.CKP = 1;
+		SSPCON1bits.CKP = 1;
 		SSPSTATbits.CKE = 1;
 		break;
 	default:
@@ -89,23 +93,23 @@ PORTBASE spi_control( xSPIHandle spid, DWORD ctrl, DWORD arg )
 	return TRUE;
 }
 
-BOOL spi_open( xSPIHandle spid )
+uint8_t spi_open( xSPIHandle spid )
 {
 	inuse = TRUE;
-	SSPCONbits.SSPEN = 1;
+	SSPCON1bits.SSPEN = 1;
 	return TRUE;
 }
 
-BOOL spi_close( xSPIHandle spid )
+uint8_t spi_close( xSPIHandle spid )
 {
 	inuse = FALSE;
-	SSPCONbits.SSPEN = 0;
+	SSPCON1bits.SSPEN = 0;
 	return TRUE;
 }
 
-void spi_write( xSPIHandle spid, BYTE data )
+void spi_write( xSPIHandle spid, uint8_t data )
 {
-	BYTE rxtmp;
+	uint8_t rxtmp;
 	SSPBUF = data;		// Write to SPI
 	while( !spi_available( spid ) ); // Wait for transfer to complete
 	rxtmp = SSPBUF;		// Dummy read
@@ -118,9 +122,9 @@ BYTE spi_read( xSPIHandle spid )
 	return SSPBUF;		// Returns received byte
 }
 
-void spi_write_array( xSPIHandle spid, const BYTE * txbuf, unsigned short len )
+void spi_write_array( xSPIHandle spid, const uint8_t * txbuf, uint16_t len )
 {
-	BYTE rxtmp;
+	uint8_t rxtmp;
 	while( len ) {
 		SSPBUF = *txbuf++;
 		while( !spi_available( spid ) );
@@ -129,7 +133,7 @@ void spi_write_array( xSPIHandle spid, const BYTE * txbuf, unsigned short len )
 	}
 }
 
-void spi_read_array( xSPIHandle spid, BYTE * rxbuf, unsigned short len )
+void spi_read_array( xSPIHandle spid, uint8_t * rxbuf, uint16_t len )
 {
 	while( len ) {
 		SSPBUF = 0xAA;
@@ -139,16 +143,16 @@ void spi_read_array( xSPIHandle spid, BYTE * rxbuf, unsigned short len )
 	}
 }
 
-BYTE spi_trans( xSPIHandle spid, BYTE data )
+BYTE spi_trans( xSPIHandle spid, uint8_t data )
 {
-	BYTE rxtmp;
+	uint8_t rxtmp;
 	SSPBUF = data;
 	while( !spi_available( spid ) );
 	rxtmp = SSPBUF;
 	return rxtmp;
 }
 
-void spi_trans_array( xSPIHandle spid, BYTE * txbuf, BYTE * rxbuf, unsigned short len )
+void spi_trans_array( xSPIHandle spid, uint8_t * txbuf, uint8_t * rxbuf, uint16_t len )
 {
 	while( len ) {
 		SSPBUF = *txbuf++;
@@ -158,7 +162,7 @@ void spi_trans_array( xSPIHandle spid, BYTE * txbuf, BYTE * rxbuf, unsigned shor
 	}
 }
 
-static BOOL spi_available( xSPIHandle spid )
+static uint8_t spi_available( xSPIHandle spid )
 {
 	return ( SSPSTATbits.BF ) ? TRUE : FALSE;
 }
