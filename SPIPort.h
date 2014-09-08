@@ -16,6 +16,15 @@
 
 	// On PIC18 xUARTHandle is a char
 	typedef char xSPIHandle;
+
+#elif defined( PLIB_RBPI )
+
+	#include <stdint.h>
+	#include <fcntl.h>
+	#include <sys/ioctl.h>
+	#include <linux/spi/spidev.h>
+
+	typedef int xSPIHandle;
 	
 #endif
 

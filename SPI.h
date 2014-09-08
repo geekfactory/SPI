@@ -27,24 +27,32 @@
 /*-------------------------------------------------------------*/
 /*		Macros and definitions				*/
 /*-------------------------------------------------------------*/
-
+// SPI operation mode
 #define SPI_MASTER	0x00000001	//!< Configures the SPI module as Master
 #define SPI_SLAVE	0x00000002	//!< Configures the SPI module as Slave
 
+// Clock polarity and phase configuration
 #define SPI_CPOL0_CPHA0 0x00000010
 #define SPI_CPOL0_CPHA1	0x00000020
 #define SPI_CPOL1_CPHA0	0x00000030
 #define SPI_CPOL1_CPHA1 0x00000040
-
 #define SPI_MODE_0	SPI_CPOL0_CPHA0
 #define SPI_MODE_1	SPI_CPOL0_CPHA1
 #define SPI_MODE_2	SPI_CPOL1_CPHA0
 #define SPI_MODE_3	SPI_CPOL1_CPHA1
 
-#define SPI_DIV_1_1		1
-#define SPI_DIV_1_2		2
-#define SPI_DIV_1_4		3
-#define SPI_DIV_1_8		4
+// Order of bit transmission
+#define SPI_MSB_LSB	0x00000100	//!< Transmit MSB first, LSB last (default)
+#define SPI_LSB_MSB	0x00000200	//!< Transmit LSB first, MSB last
+
+// Number of bits per word default is 8
+#define SPI_DATA_BITS(n) ((n & 0x0000001F) << 12)	//!< Macro to set data bits per SPI word
+
+// Generic Divider Settings
+#define SPI_DIV_1_1	1
+#define SPI_DIV_1_2	2
+#define SPI_DIV_1_4	3
+#define SPI_DIV_1_8	4
 #define SPI_DIV_1_16	5
 #define SPI_DIV_1_32	6
 #define SPI_DIV_1_64	7
@@ -60,6 +68,10 @@ enum enSPIModules {
 	E_SPI_2 = 2,
 	E_SPI_3 = 3,
 	E_SPI_4 = 4,
+	E_SPI_5 = 5,
+	E_SPI_6 = 6,
+	E_SPI_7 = 7,
+	E_SPI_8 = 8,
 };
 
 // Define "boolean" values
